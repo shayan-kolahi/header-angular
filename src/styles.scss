@@ -3,22 +3,3 @@
 @tailwind utilities;
 @import "./assets/scss/fonts";
 @import "./assets/scss/variables";
-body {
-  font-family: $font;
-  overflow-x: hidden;
-  direction: rtl;
-  min-height: 100vh;
-}
-header{
-  background-color: white;
-  width: 100%;
-  z-index: 999999;
-  box-shadow: 0 0 12px rgb(0 0 0 / 10%);
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.no-scroll{
-  overflow: hidden;
-}
