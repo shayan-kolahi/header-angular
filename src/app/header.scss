@@ -1,0 +1,222 @@
+.header_area {
+  min-height: 82px;
+  .box_button_header {
+    display: flex;
+    gap: 10px;
+    .button_header {
+      border: 1px solid #ddd;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: #fefefe;
+      color: #666;
+      font-size: 14px;
+      transition: all .3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background: #f1f1f1;
+        color: #666
+      }
+    }
+  }
+  .navbar {
+    background-color: #fff;
+    width: 100%;
+    z-index: 250;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .631372549);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    animation: slide-down .7s;
+    height: 82px;
+  }
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%)
+    }
+    100% {
+      transform: translateY(0)
+    }
+  }
+  .nav-menus-wrapper {
+    margin: 0 auto;
+    display: flex;
+    align-items: center
+  }
+  .nav-toggle {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center
+  }
+  .nav-toggle > svg {
+    width: 100%;
+    height: 100%;
+    fill: #777
+  }
+  .nav-menus-wrapper-close-button {
+    display: none
+  }
+  .nav-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    height: 100%;
+    align-items: center;
+    > li {
+      display: flex;
+      text-align: right;
+      height: 100%;
+      position: relative;
+      &:hover > a,
+      &:hover > a > .submenu-indicator > svg{
+        color: #515151;
+        fill: #515151;
+      }
+      >a {
+        display: flex;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+        transition: all .3s;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        gap: 5px;
+        font-size: 14px;
+        height: 82px;
+        .submenu-indicator {
+          transition: all .2s;
+          width: 13px;
+          height: 13px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+            fill: #000;
+          }
+        }
+      }
+
+    }
+  }
+  .nav-dropdown {
+    min-width: 170px;
+    margin: 0;
+    position: absolute;
+    list-style: none;
+    z-index: 98;
+    white-space: nowrap;
+    background: #fff;
+    border-radius: 0 0 5px 5px !important;
+    padding: 0;
+    border: 1px solid #ddd !important;
+    top: 100%;
+    &.nav-submenu .nav-submenu {
+      top: -1px
+    }
+    > li {
+      display: flex;
+      :hover{
+        svg {
+          fill: #fff
+        }
+        a {
+          background: #342877;
+          color: #fff !important
+        }
+      }
+      >a {
+        width: 100%;
+        padding: 10px 10px;
+        float: right;
+        text-decoration: none;
+        font-size: 13px;
+        color: #555;
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .3s;
+        cursor: pointer;
+        border-radius: 5px
+      }
+    }
+    .nav-dropdown {
+      right: 100%
+    }
+  }
+  .logIn > i {
+    display: none
+  }
+}
+@media(max-width: 1120px) {
+  .nav-menu {
+    gap: 20px
+  }
+}
+@media(max-width: 1024px) {
+  .nav-menu {
+    gap: 8px
+  }
+}
+@media(max-width: 991px) {
+  .nav-dropdown > li {
+    flex-direction: column
+  }
+  .logIn {
+    padding: 10px !important;
+    > span {
+      display: none
+    }
+    > i {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      svg {
+        fill: #666;
+        width: 20px;
+        height: 20px
+      }
+    }
+  }
+  .box_button_header {
+    margin-right: auto
+  }
+  .nav-menu {
+    gap: 0;
+    height: unset
+  }
+  .nav-dropdown .submenu-indicator svg {
+    transform: rotate(0)
+  }
+  .nav-menus-wrapper{
+    position: absolute;
+    right: -300px;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 300px;
+    background: red;
+    flex-direction: column;
+    transition: all .3s;
+    &.responsive_ul{
+      right: 0;
+    }
+  }
+  .nav-menus-wrapper-close-button {
+    display: block;
+  }
+}
